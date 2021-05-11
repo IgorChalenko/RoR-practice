@@ -6,36 +6,14 @@ RSpec.describe User, type: :model do
   subject do
     described_class.new(username: 'igor',
                         email: 'igor@mail.com',
-                        password: '123456')
+                        password: '')
   end
   describe 'Validations' do
-    it 'is valid with valid attributes' do
-      expect(subject).to be_valid
-    end
-
-    it 'is fails without username attribute' do
-      subject.username = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'is fails without email attribute' do
-      subject.email = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'is fails without password attribute' do
-      subject.password = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'is fails with short password' do
-      subject.password = '1234'
-      expect(subject).to_not be_valid
-    end
-
-    it 'is fails with invalid email' do
-      subject.email = 'sads@.ru'
-      expect(subject).to_not be_valid
-    end
+    it { should validate_presence_of(:username) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:password) }
+    it { should have_secure_password }
+    it { should validate_length_of(:password) }
+    it { should validate_uniqueness_of(:email) }
   end
 end
