@@ -3,39 +3,44 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject do
-    described_class.new(username: 'igor',
-                        email: 'igor@mail.com',
-                        password: '123456')
+  before(:all) do 
+    @user = build(:user)
   end
+
   describe 'Validations' do
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      expect(@user).to be_valid
     end
 
     it 'is fails without username attribute' do
-      subject.username = nil
-      expect(subject).to_not be_valid
+      @user2 = build(:user, username: nil)
+      expect(@user2).to_not be_valid
     end
 
     it 'is fails without email attribute' do
-      subject.email = nil
-      expect(subject).to_not be_valid
+      @user2 = build(:user, email: nil)
+      expect(@user2).to_not be_valid
     end
 
     it 'is fails without password attribute' do
-      subject.password = nil
-      expect(subject).to_not be_valid
+      @user2 = build(:user, password: nil)
+      expect(@user2).to_not be_valid
     end
 
     it 'is fails with short password' do
-      subject.password = '1234'
-      expect(subject).to_not be_valid
+      @user2 = build(:user, password: '123')
+      expect(@user2).to_not be_valid
     end
 
     it 'is fails with invalid email' do
-      subject.email = 'sads@.ru'
-      expect(subject).to_not be_valid
+      @user2 = build(:user, email: 'nknk.@mail')
+      expect(@user2).to_not be_valid
+    end
+
+    context "If the email is duplicated" do
+      existed_user =  User.find_by(username: "existed_user") || FactoryBot.create(:existed_user)
+      let(:email) { existed_user.email }
+      it { is_expected.to be_invalid }
     end
   end
 end
