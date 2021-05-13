@@ -3,11 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject do
-    described_class.new(username: 'igor',
-                        email: 'igor@mail.com',
-                        password: '')
-  end
+  subject(:user) { build(:user) }
+
   describe 'Validations' do
     it { should validate_presence_of(:username) }
     it { should validate_presence_of(:email) }
