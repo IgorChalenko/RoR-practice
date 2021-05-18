@@ -2,7 +2,6 @@
 
 # The PagesController
 class PagesController < ApplicationController
-  
   def new
     @user = User.new
   end
@@ -17,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   private
-  
+
   def user_params
     params.permit(:username, :email, :password, :password_confirmation)
   end
