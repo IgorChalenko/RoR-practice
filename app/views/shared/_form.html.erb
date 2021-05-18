@@ -1,0 +1,20 @@
+<%= form_tag "/pages/registration", method: :post, class: "border rounded p-4 mt-5" %>
+  <div class="mb-3">
+    <%= text_field_tag :username, params[:username], placeholder: "Username", class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= email_field_tag  :email, params[:email], placeholder: "Email", class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= password_field_tag 'password', nil, class: "form-control", placeholder: "Password" %>
+  </div>
+  <div class="mb-3">
+    <%= password_field_tag  'password_confirmation', nil, class: "form-control", placeholder: "Confirmation" %>
+  </div>
+  <div class="mb-3 d-flex justify-content-between pe-5"> 
+    <%= submit_tag "Register", method: :post, class: "btn btn-primary" %>
+    <div class="form-check">
+      <%= check_box_tag :remember_me, :yes, false, class: "form-check-input" %>
+      <%= label_tag :remember_me, "Remember me", class: "form-check-label" %>
+    </div>
+  </div>   
