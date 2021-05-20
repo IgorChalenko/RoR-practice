@@ -292,15 +292,15 @@
           null,
           1,
           1,
-          7,
+          0,
           null,
           null,
           null,
           1,
           1,
-          8,
-          8,
-          8,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -368,13 +368,11 @@
       "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/session.rb": {
         "lines": [
           1,
-          null,
           1,
-          null,
           null
         ]
       }
     },
-    "timestamp": 1621502944
+    "timestamp": 1621540455
   }
 }
