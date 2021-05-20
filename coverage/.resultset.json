@@ -292,15 +292,15 @@
           null,
           1,
           1,
-          0,
+          7,
           null,
           null,
           null,
           1,
           1,
-          1,
-          1,
-          1,
+          8,
+          8,
+          8,
           null,
           null
         ]
@@ -313,6 +313,7 @@
           1,
           1,
           null,
+          1,
           1,
           null,
           1,
@@ -334,6 +335,11 @@
         "lines": [
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -359,24 +365,16 @@
           null
         ]
       },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/controllers/pages_controller.rb": {
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/session.rb": {
         "lines": [
-          null,
-          null,
+          1,
           null,
           1,
-          null
-        ]
-      },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/controllers/application_controller.rb": {
-        "lines": [
           null,
-          null,
-          1,
           null
         ]
       }
     },
-    "timestamp": 1621334378
+    "timestamp": 1621502944
   }
 }
