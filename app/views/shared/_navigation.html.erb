@@ -7,7 +7,7 @@
                 <p class="nav-link text-primary"><%= current_user.username %></p>
               </li>
               <li class="nav-item">
-                <%= link_to "Logout", logout_url, method: :delete, class: 'nav-link text-dark'%>
+                <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-link nav-link text-dark' %>
               </li>
             <% else %>  
               <li class="nav-item">

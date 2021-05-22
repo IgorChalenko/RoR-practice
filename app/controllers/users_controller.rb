@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'Account was successfully created'
-      redirect_to root_url
+
+      redirect_to root_url, success: 'Account was successfully created'
     else
       render :new
     end

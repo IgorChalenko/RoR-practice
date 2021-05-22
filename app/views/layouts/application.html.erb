@@ -18,17 +18,7 @@
     </header>
     <main>
       <div class="container">
-        <% flash.each do |type, msg| %>
-          <% if type != 'error'%>
-            <div class="alert alert-success">
-              <%= msg %>
-            </div>
-          <% else %>
-            <div class="alert alert-danger">
-              <%= msg %>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render partial: "layouts/flash_alerts"%>
         <%= yield %>
       </div>
       </main>

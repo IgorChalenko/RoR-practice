@@ -2,6 +2,8 @@
 
 class ApplicationController < ActionController::Base
   helper_method :current_user
+  add_flash_types :success
+  add_flash_types :error
 
   def current_user
     @current_user ||= session[:current_user_id] &&
