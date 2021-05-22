@@ -1,6 +1,5 @@
-class PagesController < ApplicationController
-    def index
-        render "index"
-    end
+# frozen_string_literal: true
 
-end    
+# The PagesController
+class PagesController < ApplicationController
+end
