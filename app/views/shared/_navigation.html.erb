@@ -7,14 +7,20 @@
                 <p class="nav-link text-primary"><%= current_user.username %></p>
               </li>
               <li class="nav-item">
-                <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-link nav-link text-dark' %>
+                <% if allowed_to?(:destroy?, :session)%>
+                  <%= link_to "Logout", logout_path, method: :delete, class: 'nav-link text-dark' %>
+                <% end %>
               </li>
             <% else %>  
               <li class="nav-item">
-                <%= link_to "Register", registration_path, class: "nav-link text-dark"%>
+                <% if allowed_to?(:create?, :session)%>
+                  <%= link_to "Register", registration_path, class: "nav-link text-dark"%>
+                <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to "Login", login_path, class: 'nav-link text-dark'%>
+                <% if allowed_to?(:create?, :session)%>
+                  <%= link_to "Login", login_path, class: 'nav-link text-dark'%>
+                <% end %>
               </li>
             <% end %>  
           </ul>

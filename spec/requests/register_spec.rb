@@ -3,12 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Register', type: :request do
-  subject(:user) { create(:user) }
+  subject(:user) { build(:user) }
 
   it 'create user with valid parametrs' do
     post registration_path, params: { user: { username: user.username, email: user.email,
                                               password: user.password, password_confirmation: user.password_confirmation } }
-    expect(response).to redirect_to(root_path)
+    expect(response).to redirect_to(root_path)                                           
   end
 
   it 'render registration form when fail registration with username nil' do
@@ -36,7 +36,7 @@ RSpec.describe 'Register', type: :request do
   end
 
   it 'render registration form when fail registration with non assert password_confirmation' do
-    post registration_path, params: { user: { username: user.username, email: :email,
+    post registration_path, params: { user: { username: user.username, email: user.email,
                                               password: user.password, password_confirmation: '654321' } }
     expect(response).to render_template(:new)
   end
