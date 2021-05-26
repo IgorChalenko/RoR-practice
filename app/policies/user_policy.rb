@@ -3,5 +3,4 @@ class UserPolicy < ApplicationPolicy
   def create?
     !login?
   end
-
 end

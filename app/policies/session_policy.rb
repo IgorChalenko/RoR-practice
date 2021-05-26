@@ -8,5 +8,4 @@ class SessionPolicy < ApplicationPolicy
   def destroy?
     login?
   end
-
 end

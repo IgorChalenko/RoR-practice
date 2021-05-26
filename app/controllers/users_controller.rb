@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-
   def new
     authorize! User, to: :create?
     @user = User.new
