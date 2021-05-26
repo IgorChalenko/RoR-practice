@@ -1,13 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Fun Poll</a>
+          <%= link_to "Fun Poll", root_path, class: "navbar-brand"%>
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Register</a>
-            </li>
+            <% if current_user%>
+              <li class="nav-item">
+                <p class="nav-link text-primary"><%= current_user.username %></p>
+              </li>
+              <li class="nav-item">
+                <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-link nav-link text-dark' %>
+              </li>
+            <% else %>  
+              <li class="nav-item">
+                <%= link_to "Register", registration_path, class: "nav-link text-dark"%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Login", login_path, class: 'nav-link text-dark'%>
+              </li>
+            <% end %>  
           </ul>
         </div>
       </nav>

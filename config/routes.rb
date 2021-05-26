@@ -2,5 +2,10 @@
 
 Rails.application.routes.draw do
   root 'pages#index'
-  resources :pages
+  get '/pages', to: 'pages#index'
+  get '/registration', to: 'users#new'
+  post '/registration', to: 'users#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end
