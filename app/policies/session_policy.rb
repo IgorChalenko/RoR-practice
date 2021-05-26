@@ -1,5 +1,5 @@
 class SessionPolicy < ApplicationPolicy
-  authorize :session
+  # authorize :user
 
   def create?
     !login?
@@ -7,10 +7,6 @@ class SessionPolicy < ApplicationPolicy
 
   def destroy?
     login?
-  end
-
-  def login?
-    user.present?
   end
 
 end

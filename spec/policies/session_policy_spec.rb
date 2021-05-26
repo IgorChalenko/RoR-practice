@@ -2,9 +2,8 @@ require "rails_helper"
 
 
 RSpec.describe SessionPolicy, type: :policy do
-
   let(:policy) { SessionPolicy.new(:session, user: user) }
-
+    
       context "when user is guest" do
         let(:user) { nil }
 
@@ -15,6 +14,6 @@ RSpec.describe SessionPolicy, type: :policy do
         let(:user) { build(:user) }
   
         it { expect(policy.create?).to eq false }
-        it { expect(policy.create?).to eq true }
+        it { expect(policy.destroy?).to eq true }
       end
 end

@@ -13,7 +13,7 @@
               </li>
             <% else %>  
               <li class="nav-item">
-                <% if allowed_to?(:create?, :session)%>
+                <% if allowed_to?(:create?, User)%>
                   <%= link_to "Register", registration_path, class: "nav-link text-dark"%>
                 <% end %>
               </li>

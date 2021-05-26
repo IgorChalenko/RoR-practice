@@ -1,5 +1,5 @@
 class UserPolicy < ApplicationPolicy
-  authorize :session
+  # authorize :user
   def create?
     !login?
   end

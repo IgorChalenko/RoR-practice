@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  authorize :session
+
 
   def new 
     authorize! :session, to: :create?
