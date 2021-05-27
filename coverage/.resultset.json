@@ -292,16 +292,16 @@
           null,
           1,
           1,
-          1,
+          6,
           null,
           null,
           null,
           1,
           1,
-          2,
+          7,
           1,
-          2,
-          2,
+          6,
+          7,
           null,
           null
         ]
@@ -364,31 +364,8 @@
           1,
           null
         ]
-      },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/policies/user_policy.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/policies/application_policy.rb": {
-        "lines": [
-          null,
-          1,
-          1,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1622056975
+    "timestamp": 1622060773
   }
 }

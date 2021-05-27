@@ -40,6 +40,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'letter_opener'
 end
 
 group :development do
