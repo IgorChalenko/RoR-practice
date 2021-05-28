@@ -1,6 +1,5 @@
 class UserPolicy < ApplicationPolicy
-  # authorize :user
   def create?
-    !login?
+    !logged_in?
   end
 end

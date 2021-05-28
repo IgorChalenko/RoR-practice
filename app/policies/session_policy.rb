@@ -1,11 +1,10 @@
 class SessionPolicy < ApplicationPolicy
-  # authorize :user
 
   def create?
-    !login?
+    !logged_in?
   end
 
   def destroy?
-    login?
+    logged_in?
   end
 end

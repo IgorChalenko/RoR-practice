@@ -30,4 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  success: 
+    log_out: "You have successfuly logged out"
+    log_in: "Hello %{user_name}"
+    register: "Account was successfully created"
+  error: 
+    log_in: "Wrong email or password"
+    policy: "You can't do that"  
+  subject: 
+    registration_subject: "Registration succesfully done"  
+    

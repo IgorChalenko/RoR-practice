@@ -2,7 +2,7 @@
 class ApplicationPolicy < ActionPolicy::Base
   authorize :user, optional: true
 
-  def login?
+  def logged_in?
     user.present?
   end
 end
