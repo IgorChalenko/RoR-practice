@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
   add_flash_types :error
 
   rescue_from ActionPolicy::Unauthorized do |_ex|
-    redirect_to root_path, error: 'You cant do that'
+    redirect_to root_path, error: I18n.t('error.policy')
   end
 
   def current_user
     current_session_expire
-    @current_user = User.find_by(id: session[:user_id]) unless defined? @current_user
+    @current_user = User.find_by(id: session[:current_user_id]) unless defined? @current_user
     @current_user
   end
 

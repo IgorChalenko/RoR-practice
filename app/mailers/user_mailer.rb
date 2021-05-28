@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
-  def welcom(user)
+  def welcome(user)
     @user = user
-    mail to: @user.email, subject: 'Registration succesfully done'
+    mail to: @user.email, subject: I18n.t('subject.registration_subject')
   end
 end

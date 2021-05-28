@@ -12,10 +12,10 @@ class SessionsController < ApplicationController
     if user
       session[:current_user_id] = user.id
       session[:expire_at] = params[:remember_me] && 24.hours.from_now || 30.minutes.from_now
-      redirect_to root_path, success: "Hello #{user.username}"
+      redirect_to root_path, success: I18n.t('success.log_in', user_name: user.username)
 
     else
-      flash[:error] = 'Wrong email or password'
+      flash[:error] = I18n.t('error.log_in')
       render :new
     end
   end
@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
     authorize! :session, to: :destroy?
     session.delete(:current_user_id)
 
-    redirect_to root_path, success: 'You have successfuly logout'
+    redirect_to root_path, success: I18n.t('success.log_out')
   end
 end

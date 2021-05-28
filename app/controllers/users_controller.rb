@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     authorize! User, to: :create?
     @user = User.new(user_params)
     if @user.save
-      UserMailer.welcom(@user).deliver_later
-      redirect_to root_url, success: 'Account was successfully created'
+      UserMailer.welcome(@user).deliver_later
+      redirect_to root_url, success: I18n.t('success.register')
     else
       render :new
     end
