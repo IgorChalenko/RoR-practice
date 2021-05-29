@@ -1,5 +1,4 @@
 class SessionPolicy < ApplicationPolicy
-
   def create?
     !logged_in?
   end

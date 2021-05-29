@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/password_reset', to: 'password_reset#new'
+  post '/password_reset', to: 'password_reset#create'
+  get 'password_reset/edit', to: 'password_reset#edit'
+  put 'password_reset/update', to: 'password_reset#update'
 end

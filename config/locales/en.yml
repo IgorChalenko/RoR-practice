@@ -34,9 +34,11 @@ en:
     log_out: "You have successfuly logged out"
     log_in: "Hello %{user_name}"
     register: "Account was successfully created"
+    reset_password: "We send email on your accoun. Follow instructions to reset password"
   error: 
     log_in: "Wrong email or password"
     policy: "You can't do that"  
   subject: 
-    registration_subject: "Registration succesfully done"  
+    registration_subject: "Registration succesfully done" 
+    password_resset_subject: "Reset your password" 
     

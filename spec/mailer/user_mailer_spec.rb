@@ -1,12 +1,11 @@
 require 'rails_helper'
 RSpec.describe UserMailer, type: :mailer do
-
   describe UserMailer do
     let(:user) { build(:user) }
-    let(:mail) { UserMailer.welcome(user)}
-    
-    it "render the subject" do
-      expect(mail.subject).to eq(I18n.t('subject.registration_subject')) 
+    let(:mail) { UserMailer.welcome(user) }
+
+    it 'render the subject' do
+      expect(mail.subject).to eq(I18n.t('subject.registration_subject'))
     end
 
     it 'renders the receiver email' do
