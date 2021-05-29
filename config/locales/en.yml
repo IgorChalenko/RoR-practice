@@ -35,10 +35,12 @@ en:
     log_in: "Hello %{user_name}"
     register: "Account was successfully created"
     reset_password: "We send email on your accoun. Follow instructions to reset password"
+    update: "Your password successfully updat. Please log in."
   error: 
     log_in: "Wrong email or password"
-    policy: "You can't do that"  
+    policy: "You can't do that" 
+    token_expire: "Your token has expire. Please try again." 
   subject: 
     registration_subject: "Registration succesfully done" 
-    password_resset_subject: "Reset your password" 
+    password_reset_subject: "Reset your password" 
     

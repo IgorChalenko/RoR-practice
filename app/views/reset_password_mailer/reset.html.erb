@@ -1,8 +1,9 @@
-<h1>Hello <%= @user.username %><h1>
+<h1>Hello <%= params[:user].username %><h1>
 <p>If you want to reset your password on Fun Poll app, follow the link below: </p>
 
-<%= link_to 'Resset password' password_reset_edit_url(token: @token) %>
+<%= link_to 'Resset password', password_reset_edit_url(token: @token) %>
 
 <p>If it not you request to change your password, do not follow the link. It will expire after 15 minutes</p>
-
-<h5>Fun Poll team </h5>
+<div style="width: 100%; background-color: rgb(105, 105, 105); "> 
+  <h5>Fun Poll team </h5>
+</div>

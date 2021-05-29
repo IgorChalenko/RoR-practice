@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe UserMailer, type: :mailer do
   describe UserMailer do
-    let(:user) { build(:user) }
+    let(:user) { create(:user) }
     let(:mail) { UserMailer.welcome(user) }
 
     it 'render the subject' do
