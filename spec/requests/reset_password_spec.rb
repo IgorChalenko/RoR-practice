@@ -17,18 +17,17 @@ RSpec.describe 'ResetPassword', type: :request do
     expect(flash[:success]).to be_present
   end
 
-  let(:token) { user.signed_id(purpose: 'password_reset', expires_in: 15.minutes)}
-  
+  let(:token) { user.signed_id(purpose: 'password_reset', expires_in: 15.minutes) }
+
   it 'rendering update form ' do
-   get password_reset_edit_path, params: { token: token}
-   expect(response).to render_template(:edit)
+    get password_reset_edit_path, params: { token: token }
+    expect(response).to render_template(:edit)
   end
 
   it 'redirect to login path if password update success' do
-    patch password_reset_update_path, params: { token: token, user: { password: user.password, 
-                                                password_confirmation: user.password_confirmation}}
+    patch password_reset_update_path, params: { token: token, user: { password: user.password,
+                                                                      password_confirmation: user.password_confirmation } }
     expect(response).to redirect_to(login_path)
     expect(flash[:success]).to be_present
   end
-
 end
