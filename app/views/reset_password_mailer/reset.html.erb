@@ -1,0 +1,9 @@
+<h1>Hello <%= @user.username %><h1>
+<p style="font-size: 14px">If you want to reset your password on Fun Poll app, follow the link below: </p>
+
+<%= link_to 'Reset password', reset_password_edit_url(token: @token) %>
+
+<p style="font-size: 14px">If it not you request to change your password, do not follow the link. It will expire after 15 minutes</p>
+<div style="width: 100%; background-color: rgb(105, 105, 105); "> 
+  <h5>Fun Poll team </h5>
+</div>

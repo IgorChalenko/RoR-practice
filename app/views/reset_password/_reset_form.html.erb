@@ -1,0 +1,9 @@
+<%= form_tag reset_password_path, method: :post, class: "border rounded p-4 mt-5" do%>
+  <h5>Resset your password</h5>
+  <div class="mb-3">
+    <%= email_field_tag :email, params[:email], class: "form-control", placeholder: "Email" %>
+  </div> 
+  <div class="mb-3 d-flex justify-content-between pe-5">
+    <%= submit_tag "Reset password", class: "btn btn-primary" %>
+  </div>
+<% end %>

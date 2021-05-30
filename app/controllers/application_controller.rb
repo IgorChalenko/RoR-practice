@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   add_flash_types :error
 
   rescue_from ActionPolicy::Unauthorized do |_ex|
-    redirect_to root_path, error: I18n.t('error.policy')
+    redirect_to root_path, error: I18n.t('flash.error.policy')
   end
 
   def current_user

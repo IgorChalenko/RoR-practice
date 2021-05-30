@@ -2,5 +2,4 @@
 
 # The PagesController
 class PagesController < ApplicationController
-
 end

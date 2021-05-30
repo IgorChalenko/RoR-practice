@@ -1,5 +1,6 @@
-class SessionPolicy < ApplicationPolicy
+# frozen_string_literal: true
 
+class SessionPolicy < ApplicationPolicy
   def create?
     !logged_in?
   end

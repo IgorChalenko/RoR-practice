@@ -1,0 +1,9 @@
+<div class="container-sm">
+  <div class="row justify-content-center">
+    <div class="col-4 align-self-center">
+      <% if allowed_to?(:reset_password?, User)%>
+        <%= render "reset_form"%>
+      <% end %>  
+    </div>
+  </div>
+</div>

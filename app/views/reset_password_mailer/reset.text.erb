@@ -1,0 +1,9 @@
+Hello <%= @user.username %>
+===============================================
+If you want to reset your password on Fun Poll app, follow the link below: 
+
+<%= reset_password_edit_url(token: @token) %>
+
+If it not you request to change your password, do not follow the link. It will expire after 15 minutes
+
+Fun Poll team 
