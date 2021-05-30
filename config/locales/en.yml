@@ -30,17 +30,27 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  success: 
-    log_out: "You have successfuly logged out"
-    log_in: "Hello %{user_name}"
-    register: "Account was successfully created"
-    reset_password: "We send email on your accoun. Follow instructions to reset password"
-    update: "Your password successfully updat. Please log in."
-  error: 
-    log_in: "Wrong email or password"
-    policy: "You can't do that" 
-    token_expire: "Your token has expire. Please try again." 
-  subject: 
-    registration_subject: "Registration succesfully done" 
-    password_reset_subject: "Reset your password" 
+  reset_password:
+    reset:
+      subject: "Reset your password"
+
+  user_mailer: 
+    welcome:
+      subject: "Registration succesfully done"     
+  
+  flash:    
+    success: 
+      log_out: "You have successfuly logged out"
+      log_in: "Hello %{user_name}"
+      register: "Account was successfully created"
+      reset_password: "We send email on your accoun. Follow instructions to reset password"
+      update: "Your password successfully updated. Please log in."
+
+  flash:  
+    error: 
+      log_in: "Wrong email or password"
+      policy: "You can't do that" 
+      token_expire: "Your token has expire. Please try again." 
+
+
     

@@ -2,30 +2,30 @@
 
 class ResetPasswordController < ApplicationController
   def new
-    authorize! User, to: :create?
+    authorize! User, to: :reset_password?
   end
 
   def create
-    authorize! User, to: :create?
+    authorize! User, to: :reset_password?
     @user = User.find_by(email: params[:email])
 
     ResetPasswordMailer.reset(@user).deliver_later if @user
-    redirect_to root_path, success: I18n.t('success.reset_password')
+    redirect_to root_path, success: I18n.t('flash.success.reset_password')
   end
 
   def edit
-    authorize! User, to: :edit?
+    authorize! User, to: :reset_password?
     @user = User.find_signed!(params[:token], purpose: 'password_reset')
   rescue ActiveSupport::MessageVerifier::InvalidSignature
-    redirect_to login_path, error: I18n.t('error.token_expire')
+    redirect_to login_path, error: I18n.t('flash.error.token_expire')
   end
 
   def update
-    authorize! User, to: :update?
+    authorize! User, to: :reset_password?
     @user = User.find_signed!(params[:token], purpose: 'password_reset')
     @user.update(password_params)
     if @user.save
-      redirect_to login_path, success: I18n.t('success.update')
+      redirect_to login_path, success: I18n.t('flash.success.update')
     else
       render :edit
     end

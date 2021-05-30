@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.welcome(@user).deliver_later
-      redirect_to root_url, success: I18n.t('success.register')
+      redirect_to root_url, success: I18n.t('flash.success.register')
     else
       render :new
     end
