@@ -11,3 +11,11 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+const addButton = document.querySelector('.button-success');
+const options = document.querySelectorAll('[name = "Option"]');
+
+addButton.addEventListener('click', (e) => {
+  
+});

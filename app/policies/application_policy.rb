@@ -7,4 +7,8 @@ class ApplicationPolicy < ActionPolicy::Base
   def logged_in?
     user.present?
   end
+
+  def owner?
+    current_user.id == record.user_id
+  end
 end
