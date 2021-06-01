@@ -5,7 +5,7 @@ class CreatePollsTable < ActiveRecord::Migration[6.1]
       t.text :description
       t.time :start_date, null: false
       t.time :end_date, null: false
-      t.belongs_to :user
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end

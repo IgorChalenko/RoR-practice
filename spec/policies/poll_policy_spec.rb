@@ -3,16 +3,17 @@
 require 'rails_helper'
 
 RSpec.describe PollPolicy, type: :policy do
-  let(:policy) { PollPolicy.new(Poll, user: user) }
 
-  context 'when user is guest' do
-    let(:user) { nil }
+    let(:user) { build_stubbed :user }
 
-    it { expect(policy.create?).to eq false }
-  end
-  context 'if user is logged in' do
-    let(:user) { build(:user) }
+    let(:context) { {user: user} }
 
-    it { expect(policy.create?).to eq true }
-  end
+    describe_rule :create? do
+      failed "when user guest" do
+        let(:user) { nil }
+      end
+
+      succeed "when user logged in"
+       
+    end
 end
