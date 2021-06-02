@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   post '/reset_password', to: 'reset_password#create'
   get '/reset_password/edit', to: 'reset_password#edit'
   patch '/reset_password/update', to: 'reset_password#update'
-  resources :polls, only: %i[new]
+  get '/poll/new', to: 'polls#new'
+  post '/poll/new', to: 'polls#create'
+  get '/poll/show', to: 'polls#show'
+  resources :polls, only: %i[index]
+
 end

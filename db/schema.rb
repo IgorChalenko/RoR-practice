@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2021_05_30_202427) do
   create_table "polls", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
-    t.time "start_date", null: false
-    t.time "end_date", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,5 +41,7 @@ ActiveRecord::Schema.define(version: 2021_05_30_202427) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "poll_memberships", "polls"
+  add_foreign_key "poll_memberships", "users"
   add_foreign_key "polls", "users"
 end

@@ -3,8 +3,8 @@ class CreatePollsTable < ActiveRecord::Migration[6.1]
     create_table :polls do |t|
       t.string :title, null: false
       t.text :description
-      t.time :start_date, null: false
-      t.time :end_date, null: false
+      t.date :start_date, null: false
+      t.date :end_date, null: false
       t.belongs_to :user, foreign_key: true
 
       t.timestamps

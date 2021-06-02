@@ -1,0 +1,25 @@
+<div class="container-fluid" style="padding-top: 45px;">
+  <div class="d-flex flex-row justify-content-between align-items-center">
+    <h1>Your poll</h1>
+    <%= link_to '+ New Poll', poll_new_path, class: "btn btn-primary"%>
+  </div>
+  <div class="container">
+    <div class="row justify-content-between pb-3">
+      <h3>Uppcoming polls</h3>
+      <% @owned_polls.upcoming.each do |p|%>
+        <%= render partial: "upcoming",
+                   object: p %>
+      <% end %>
+      <h3>Active polls</h3>
+      <% @owned_polls.active.each do |p|%>
+        <%= render partial: "ended",
+                   object: p %>
+      <% end %>
+      <h3>Closed pools</h3>
+      <% @owned_polls.ended.each do |p|%>
+        <%= render partial: "ended",
+                   object: p %>
+      <% end %>
+    </div>
+  </div>  
+</div>
