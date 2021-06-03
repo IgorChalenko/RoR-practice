@@ -3,8 +3,8 @@
 FactoryBot.define do
   factory :poll, class: Poll do
     title { 'title' }
-    description { 'description'}
-    start_date { Date.current}
+    description { 'description' }
+    start_date { Date.current }
     end_date { Date.tomorrow }
   end
 end

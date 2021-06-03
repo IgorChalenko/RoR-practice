@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   patch '/reset_password/update', to: 'reset_password#update'
   get '/poll/new', to: 'polls#new'
   post '/poll/new', to: 'polls#create'
-  get '/poll/show', to: 'polls#show'
-  resources :polls, only: %i[index]
+  get '/poll/:id', to: 'polls#show', as: 'poll'
+  delete '/poll/:id', to: 'polls#destroy'
+  get '/poll/:id/edit', to: 'polls#edit', as: 'poll_edit'
+  patch '/poll/:id', to: 'polls#update'
 
+  resources :polls, only: %i[index]
 end

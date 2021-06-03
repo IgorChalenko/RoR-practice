@@ -9,6 +9,6 @@ class ApplicationPolicy < ActionPolicy::Base
   end
 
   def owner?
-    current_user.id == record.user_id
+    logged_in? && user.id == record.user_id
   end
 end

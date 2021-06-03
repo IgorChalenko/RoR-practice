@@ -1,16 +1,16 @@
-<div class="card mb-3">
+<div class="card mb-3 shadow-sm p-3 mb-5 bg-body rounded">
       <div class="card-body">
         <div class="row">
           <div class="col-8">
             <h6>Title</h6>
-            <p><%= ended[:title] %></p>
+            <%= link_to "#{ended[:title]}", poll_path(ended[:id]), class: "nav-link" %>
           </div>
           <div class="col-2">
             <h6>Author</h6>
             <p class="text-primary"><%= ended.user.username %></p>
           </div>
           <div class="col-2">
-            <h6>Start date</h6>
+            <h6>End date</h6>
             <p><%= ended[:start_date] %></p>
           </div>
         </div>

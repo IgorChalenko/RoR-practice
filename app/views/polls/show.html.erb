@@ -1,3 +1,42 @@
 <div class="container-fluid" style="padding-top: 35px;">
-  <h3><%= @poll.title %></h3>
+  <div class="row">
+    <div class="col-7">
+      <h3><%= @poll.title %></h3>
+    </div>
+    <div class="col-5 d-flex justify-content-between ">
+      <button type="button" class="btn btn-success btn-lg">Invite user</button>
+      <%= link_to "Edit poll", poll_edit_path(@poll.id), class:"btn btn-warning pl-1 pr-1"%>
+      <%= link_to "Delete poll", poll_path(@poll.id), method: :delete, class:"btn btn-danger pl-1 pr-1"%>
+    </div>
+  </div>
+  <div class="row gx-5">
+    <div class="col-6">
+      <div class="card mt-3 shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="card-body">
+          <h5>Details</h5>
+          <p class="fs-6">Description</p>
+          <p><%= @poll.description %></p>
+          <div class="row justify-content-between">
+            <div class="col-3">
+              <p>Start date</p>
+              <p><%= @poll.start_date %></p>
+            </div>
+            <div class="col-3">
+              <p>End date</p>
+              <p><%= @poll.end_date %></p>
+            </div>
+          </div>
+          <p class="fs-6">Participians count</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card mt-3 shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="card-body">
+          This is some text within a card body.
+        </div>
+      </div>
+    </div>   
+  </div>  
+  
 </div>

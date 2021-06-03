@@ -12,7 +12,7 @@
       <% end %>
       <h3>Active polls</h3>
       <% @owned_polls.active.each do |p|%>
-        <%= render partial: "ended",
+        <%= render partial: "active",
                    object: p %>
       <% end %>
       <h3>Closed pools</h3>

@@ -1,0 +1,51 @@
+<%= form_for @poll, url: poll_edit_path, method: :patch, class: "border rounded p-4 mt-5" do |f| %>   
+    <% if f.object.errors.any? %>  
+      <div class="alert alert-danger">
+          <%= f.object.errors.full_messages.each do |msg| %>
+            <div><%= msg %></div>
+          <% end %>
+      </div>
+      <% end %>  
+    
+    <div class="mb-3">
+      <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+    </div> 
+    <div class="mb-3">
+      <%= f.text_area :description, placeholder: "Description", class: "form-control" %>
+    </div>
+    <div class="row"> 
+      <div class="col-6 mb-3 d-flex flex-column">
+        <%= f.label :start_date, class: "form-label"%>
+        <%= f.date_field :start_date, class: "form-control"%>
+      </div> 
+      <div class="col-6 mb-3 d-flex flex-column">
+        <%= f.label :end_date, class: "form-label"%>
+        <%= f.date_field :end_date, class: "form-control"%>  
+      </div>
+    </div>
+    <%# <div class="row">  %>
+      <%# <div class="col-4 mb-3"> %>
+        <%# <%= f.text_field :option_1, placeholder: "Option", class: "form-control"%> %>
+      <%# </div>  %>
+      <%# <div class="col-4 mb-3"> %>
+        <%# <%= f.text_field :option_2, placeholder: "Option", class: "form-control"%>   %>
+      <%# </div> %>
+      <%# <div class="col-4 mb-3"> %>
+        <%# <%= f.text_field :option_3, placeholder: "Option", class: "form-control d-none"%>   %>
+      <%# </div> %>
+      <%# <div class="col-4 mb-3"> %>
+        <%# <%= f.text_field :option_4, placeholder: "Option", class: "form-control d-none"%>   %>
+      <%# </div> %>
+      <%# <div class="col-4 mb-3"> %>
+        <%# <%= f.text_field :option_5, placeholder: "Option", class: "form-control d-none"%>   %>
+      <%# </div> %>
+    <%# </div> %>
+    <div class="row d-flex justify-content-between">      
+      <div class="col-3">
+        <%= f.submit "Edit poll", method: :post, class: "btn btn-primary" %>   
+      </div>
+      <div class="col-5">
+        <%= f.button "Add option", class: "btn btn-success", style: "width: 100%;" %>  
+      </div>
+    </div>
+  <% end %>
