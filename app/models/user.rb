@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
   has_secure_password
   has_many :own_polls, dependent: :destroy, class_name: 'Poll'
-  has_many :memberships, class_name: 'PollMembership'
+  has_many :memberships, class_name: 'PollMembership', foreign_key: "user_id"
   has_many :polls, through: :memberships, source: :poll
+  
 
   validates :username, presence: true
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true

@@ -3,15 +3,15 @@
         <div class="row">
           <div class="col-8">
             <h6>Title</h6>
-            <%= link_to "#{ended[:title]}", poll_path(ended[:id]), class: "nav-link" %>
+            <%= link_to ended.title, ended, class: "nav-link" %>
           </div>
           <div class="col-2">
             <h6>Author</h6>
-            <p class="text-primary"><%= ended.user.username %></p>
+            <p class="text-info"><%= ended.user.username %></p>
           </div>
           <div class="col-2">
             <h6>End date</h6>
-            <p><%= ended[:start_date] %></p>
+            <p><%= ended.start_date %></p>
           </div>
         </div>
       </div>

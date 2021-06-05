@@ -6,5 +6,6 @@ FactoryBot.define do
     description { 'description' }
     start_date { Date.current }
     end_date { Date.tomorrow }
+    user
   end
 end
