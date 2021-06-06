@@ -1,5 +1,5 @@
 class PollMembership < ApplicationRecord
   belongs_to :user
   belongs_to :poll
-  belongs_to :poll_option
+  belongs_to :poll_option, dependent: :destroy
 end

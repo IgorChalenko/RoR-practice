@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get '/reset_password/edit', to: 'reset_password#edit'
   patch '/reset_password/update', to: 'reset_password#update'
 
+  get '/invite', to: 'polls#invite'
+
   resources :polls
+
+ 
 
 end

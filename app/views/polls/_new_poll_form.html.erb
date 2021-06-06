@@ -23,21 +23,16 @@
         <%= f.date_field :end_date, class: "form-control"%>  
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="options">
       <div class="col-4 mb-3">
-        <%= f.text_field :option_1, placeholder: "Option", class: "form-control"%>
+        <%= f.fields_for :poll_options do |option| %>
+          <%= option.text_field :option_name, placeholder: 'Option', class: "form-control" %>
+        <% end %>
       </div>
       <div class="col-4 mb-3">
-        <%= f.text_field :option_2, placeholder: "Option", class: "form-control"%>
-      </div> 
-      <div class="col-4 mb-3"> %>
-        <%= f.text_field :option_3, placeholder: "Option", class: "form-control d-none"%>
-      </div> %>
-      <div class="col-4 mb-3">
-        <%= f.text_field :option_4, placeholder: "Option", class: "form-control d-none"%>
-      </div> 
-      <div class="col-4 mb-3"> 
-        <%= f.text_field :option_5, placeholder: "Option", class: "form-control d-none"%>
+        <%= f.fields_for :poll_options do |option| %>
+          <%= option.text_field :option_name, placeholder: 'Option', class: "form-control" %>
+        <% end %>
       </div> 
     </div> 
     <div class="row d-flex justify-content-between">      
@@ -45,7 +40,7 @@
         <%= f.submit "Add poll", class: "btn btn-primary" %>     
       </div>
       <div class="col-5">
-        <%= f.button "Add option", class: "btn btn-success", style: "width: 100%;" %>  
+        <button class="btn btn-success" id="btn">Add option</button>
       </div>
     </div>
   <% end %>

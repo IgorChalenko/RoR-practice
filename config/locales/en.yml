@@ -46,7 +46,7 @@ en:
     poll:
       create: "Poll created"
       update: "Poll successfylly updated"
-      deleted: "Your poll deleted"  
+      deleted: "Your poll deleted"
     error:
       log_in: "Wrong email or password"
       policy: "You can't do that"

@@ -12,4 +12,12 @@ class PollPolicy < ApplicationPolicy
   def show?
     owner?
   end
+
+  def update?
+    owner?
+  end
+
+  def destroy?
+    owner?
+  end
 end

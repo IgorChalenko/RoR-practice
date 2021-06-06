@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_134611) do
   end
 
   create_table "poll_options", force: :cascade do |t|
-    t.integer "vote"
+    t.text "vote_option", null: false
     t.integer "poll_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

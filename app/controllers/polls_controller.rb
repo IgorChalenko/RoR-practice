@@ -33,10 +33,12 @@ class PollsController < ApplicationController
 
   def edit
     @poll = current_user.own_polls.find(params[:id])
+    authorize! @poll, to: :update?
   end
 
   def update
     @poll = current_user.own_polls.find(params[:id])
+    authorize! @poll, to: :update?
     @poll.update(poll_params)
     if @poll.save
       redirect_to poll_path(@poll.id), success: I18n.t('flash.poll.update')
@@ -47,10 +49,14 @@ class PollsController < ApplicationController
 
   def destroy
     @poll = current_user.own_polls.find(params[:id])
+    authorize! @poll, to: :destroy?
     @poll.destroy
     redirect_to polls_path, success: I18n.t('flash.poll.deleted')
   end
 
+  def invite
+    
+  end
 
   private
 

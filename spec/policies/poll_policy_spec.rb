@@ -23,7 +23,14 @@ RSpec.describe PollPolicy, type: :policy do
 
   describe_rule :show? do
     failed 'when user not owner' do
-      # let(:user) { build(:user) }
+      let(:user) { build_stubbed(:user) }
+    end
+    succeed 'when user owner'
+  end
+
+  describe_rule :update? do
+    failed 'when user not owner' do
+      let(:user) { build_stubbed(:user) }
     end
     succeed 'when user owner'
   end
