@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     if current_session && current_session < current_time
       session.delete(:current_user_id) 
     else 
-      current_session = session[:expire_at]
+      current_session = 20.minutes.from_now
     end
   end
 end

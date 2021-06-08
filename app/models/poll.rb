@@ -1,8 +1,8 @@
 class Poll < ApplicationRecord
   belongs_to :user
   has_many :memberships, class_name: 'PollMembership', foreign_key: "poll_id"
-  has_many :members, through: :memberships, source: :user
-  has_many :options, class_name: "PollOption"
+  has_many :members, through: :memberships, source: :user, dependent: :destroy
+  has_many :options, class_name: "PollOption", dependent: :destroy
 
   accepts_nested_attributes_for :options, allow_destroy: true
   

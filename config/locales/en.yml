@@ -47,12 +47,12 @@ en:
       create: "Poll created"
       update: "Poll successfylly updated"
       deleted: "Your poll deleted"
+      not_found: "Poll not found"  
     error:
       log_in: "Wrong email or password"
       policy: "You can't do that"
       token_expire: "Your token has expire. Please try again."
-    poll:
-      not_found: "Poll not found"   
+       
 
 
     

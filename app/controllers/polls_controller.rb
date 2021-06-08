@@ -6,25 +6,29 @@ class PollsController < ApplicationController
 
   def index
     authorize! Poll, to: :index?  
-    @active = current_user.own_polls.active
-    @upcoming = current_user.own_polls.upcoming
-    @ended = current_user.own_polls.ended
+    @active = current_user.polls.active
+    @upcoming = current_user.polls.upcoming
+    @ended = current_user.polls.ended
   end
 
   def show
-    @poll = current_user.own_polls.find(params[:id])
+    @poll = current_user&.polls.find(params[:id])
+    @options = @poll.options
     authorize! @poll, to: :show?
   end
 
   def new
     authorize! Poll, to: :create?
     @poll = Poll.new
+    5.times { @poll.options.build }
   end
 
   def create
     authorize! Poll, to: :create?
     @poll = current_user.own_polls.new(poll_params)
+
     if @poll.save
+      @poll.members << current_user
       redirect_to polls_path, success: I18n.t('flash.poll.create')
     else
       render :new
@@ -33,6 +37,7 @@ class PollsController < ApplicationController
 
   def edit
     @poll = current_user.own_polls.find(params[:id])
+
     authorize! @poll, to: :update?
   end
 
@@ -54,13 +59,10 @@ class PollsController < ApplicationController
     redirect_to polls_path, success: I18n.t('flash.poll.deleted')
   end
 
-  def invite
-    
-  end
 
   private
 
   def poll_params
-    params.require(:poll).permit(:title, :description, :start_date, :end_date)
+    params.require(:poll).permit(:title, :description, :start_date, :end_date, options_attributes: [:vote_option])
   end
 end

@@ -10,7 +10,7 @@ class PollPolicy < ApplicationPolicy
   end
 
   def show?
-    owner?
+    invited?
   end
 
   def update?

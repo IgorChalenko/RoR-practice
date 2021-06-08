@@ -23,23 +23,13 @@
         <%= f.date_field :end_date, class: "form-control"%>  
       </div>
     </div>
-    <%# <div class="row">  %>
-      <%# <div class="col-4 mb-3"> %>
-        <%# <%= f.text_field :option_1, placeholder: "Option", class: "form-control"%> %>
-      <%# </div>  %>
-      <%# <div class="col-4 mb-3"> %>
-        <%# <%= f.text_field :option_2, placeholder: "Option", class: "form-control"%>   %>
-      <%# </div> %>
-      <%# <div class="col-4 mb-3"> %>
-        <%# <%= f.text_field :option_3, placeholder: "Option", class: "form-control d-none"%>   %>
-      <%# </div> %>
-      <%# <div class="col-4 mb-3"> %>
-        <%# <%= f.text_field :option_4, placeholder: "Option", class: "form-control d-none"%>   %>
-      <%# </div> %>
-      <%# <div class="col-4 mb-3"> %>
-        <%# <%= f.text_field :option_5, placeholder: "Option", class: "form-control d-none"%>   %>
-      <%# </div> %>
-    <%# </div> %>
+    <div class="row" id="options">
+      <div class="col-4 mb-3">
+        <%= f.fields_for :options do |option| %>
+          <%= option.text_field :vote_option, placeholder: 'Option', class: "form-control" %>
+        <% end %>
+      </div>
+    </div> 
     <div class="row d-flex justify-content-between">      
       <div class="col-3">
         <%= f.submit "Edit poll", class: "btn btn-primary" %>   

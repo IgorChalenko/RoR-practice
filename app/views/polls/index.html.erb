@@ -5,7 +5,7 @@
   </div>
   <div class="container">
     <div class="row justify-content-between pb-3">
-      <% if current_user.own_polls.empty?%>
+      <% if current_user.polls.empty?%>
         <h3>You have no polls yet.</h3>
       <% else %>  
         <h3>Uppcoming polls</h3>
