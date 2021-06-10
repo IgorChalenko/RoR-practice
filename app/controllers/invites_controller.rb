@@ -1,19 +1,25 @@
 class InvitesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound do 
+    render :new
+    flash[:error] = 'User not found'
+  end
 
   def new
-    @poll = current_user.own_polls.find(params[:poll_id])
+    @poll = Poll.find(params[:poll_id])
+    authorize! @poll, to: :invite?
   end
 
   def create
-    @poll = current_user.own_polls.find(params[:poll_id])
-    @invited_user = User.find_by(username: params[:username])
-    if @invited_user && !invited?
-      @poll.members << @invited_user
-      redirect_to polls_path, success: "You invite #{@invited_user.username} to your poll"
-    else
-      render 'new'
-      flash[:error] = 'User not exist or alredy invited'
-    end
+    @poll = Poll.find(params[:poll_id])
+    authorize! @poll, to: :invite?
+    @invited_user = User.where(username: params[:query]).or(User.where(email: params[:query])).take!
+      if !invited?
+        @poll.members << @invited_user
+        redirect_to polls_path, success: "You invite #{@invited_user.username} to your poll"
+      else
+        render :new
+        flash[:error] = 'User alredy invited'
+      end 
   end
 
   private

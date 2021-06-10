@@ -12,4 +12,22 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+window.addEventListener('DOMContentLoaded', () => {
+
+  const addButton = document.querySelector('#btn'),
+        options = document.querySelector('#options');
+  
+  let counter = 1;                    
+
+  addButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (counter <= 3) {
+      options.insertAdjacentHTML('beforeend', optionText);
+      counter++;
+    } else {
+      addButton.style.display = 'none';
+    }
+  });
+
+});
 

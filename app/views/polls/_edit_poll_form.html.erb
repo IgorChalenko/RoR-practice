@@ -24,11 +24,12 @@
       </div>
     </div>
     <div class="row" id="options">
-      <div class="col-4 mb-3">
         <%= f.fields_for :options do |option| %>
-          <%= option.text_field :vote_option, placeholder: 'Option', class: "form-control" %>
+          <div class="col-4"> 
+            <%= option.text_field :vote_option, placeholder: 'Option', class: "form-control" %>
+            <%= option.check_box :_destroy %>
+          </div>
         <% end %>
-      </div>
     </div> 
     <div class="row d-flex justify-content-between">      
       <div class="col-3">

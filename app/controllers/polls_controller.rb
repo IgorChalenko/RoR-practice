@@ -12,9 +12,9 @@ class PollsController < ApplicationController
   end
 
   def show
-    @poll = current_user&.polls.find(params[:id])
-    @options = @poll.options
+    @poll = Poll.find(params[:id])
     authorize! @poll, to: :show?
+    @options = @poll.options
   end
 
   def new
@@ -26,8 +26,7 @@ class PollsController < ApplicationController
   def create
     authorize! Poll, to: :create?
     @poll = current_user.own_polls.new(poll_params)
-
-    if @poll.save
+    if @poll.save 
       @poll.members << current_user
       redirect_to polls_path, success: I18n.t('flash.poll.create')
     else
@@ -42,7 +41,7 @@ class PollsController < ApplicationController
   end
 
   def update
-    @poll = current_user.own_polls.find(params[:id])
+    @poll = Poll.find(params[:id])
     authorize! @poll, to: :update?
     @poll.update(poll_params)
     if @poll.save
@@ -53,7 +52,7 @@ class PollsController < ApplicationController
   end
 
   def destroy
-    @poll = current_user.own_polls.find(params[:id])
+    @poll = Poll.find(params[:id])
     authorize! @poll, to: :destroy?
     @poll.destroy
     redirect_to polls_path, success: I18n.t('flash.poll.deleted')
@@ -63,6 +62,6 @@ class PollsController < ApplicationController
   private
 
   def poll_params
-    params.require(:poll).permit(:title, :description, :start_date, :end_date, options_attributes: [:vote_option])
+    params.require(:poll).permit(:title, :description, :start_date, :end_date, options_attributes: [:vote_option, :_destroy])
   end
 end

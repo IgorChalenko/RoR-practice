@@ -1,12 +1,5 @@
 <div class="row">
   <div class="col-6 ">
-    <a class="nav-link border">
-      <%= form_with model: @poll do |form| %>
-        <%= form.fields_for @options, include_id: false do |f| %>
-          <%= f.text_field :vote_option %>
-          <%= f.check_box :_destroy %>
-        <% end %>
-      <% end %>  
-    </a>
+    <%= button_to options.vote_option, poll_votes_path(@poll.id), methot: :post, class: 'nav-link border'%>
   </div>
 </div>
