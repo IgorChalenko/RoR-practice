@@ -37,6 +37,6 @@ class PollPolicy < ApplicationPolicy
   end
 
   def voted?
-    record.memberships.where(user_id: user.id).and(record.memberships.where.not(poll_option_id: nil)).exists?
+    record.memberships.exists?("user_id = ? AND poll_option_id IS NOT NULL", user.id)
   end
 end

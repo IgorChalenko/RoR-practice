@@ -15,7 +15,7 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
     authorize! @poll, to: :show?
     @options = @poll.options
-    @members = @poll.members.count
+    @members_count = @poll.members.count
   end
 
   def new

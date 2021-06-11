@@ -1,7 +1,5 @@
 <div class="row">
   <div class="col-6 ">
-  <%= form_for options, url: poll_vote_path(@poll.id), method: :patch do |f|%>
-    <%= f.submit options.vote_option, class: 'nav-link border mb-1'%>
-  <% end %>  
+    <%= button_to options.vote_option, poll_vote_path(@poll, option_id: options.id), methot: :patch, class: 'nav-link border w-75'%>
   </div>
 </div>

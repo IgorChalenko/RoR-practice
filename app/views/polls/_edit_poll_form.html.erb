@@ -1,4 +1,4 @@
-<%= form_for @poll, method: :patch, class: "border rounded p-4 mt-5" do |f| %>   
+<%= form_for @poll, class: "border rounded p-4 mt-5" do |f| %>   
     <% if f.object.errors.any? %>  
       <div class="alert alert-danger">
           <%= f.object.errors.full_messages.each do |msg| %>
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="row" id="options">
-        <%= f.fields_for :options, method: :patch do |option| %>
+        <%= f.fields_for :options do |option| %>
           <div class="col-4"> 
             <%= option.text_field :vote_option, placeholder: 'Option', class: "form-control" %>
             <%= option.check_box :_destroy %>

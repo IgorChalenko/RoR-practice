@@ -4,7 +4,7 @@ class Poll < ApplicationRecord
   has_many :members, -> { distinct }, through: :memberships, source: :user, dependent: :destroy
   has_many :options, class_name: "PollOption", dependent: :destroy
 
-  accepts_nested_attributes_for :options, allow_destroy: true, reject_if: lambda {|attributes| attributes['vote_option'].blank?}
+  accepts_nested_attributes_for :options, allow_destroy: true, reject_if: :blank_option?
   
 
   validates :title, presence: true
@@ -23,6 +23,8 @@ class Poll < ApplicationRecord
     errors.add(:end_date, "can't be earlier than start date ") if end_date <= start_date
   end
   
-
+  def blank_option?
+    lambda {|attributes| attributes['vote_option'].blank?}
+  end
 
 end
