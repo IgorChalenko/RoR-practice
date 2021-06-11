@@ -32,13 +32,13 @@
               <p><%= @poll.end_date %></p>
             </div>
           </div>
-          <p class="fs-6">Participians count</p>
+          <p class="fs-6">Participians count <%= @members%></p>
         </div>
       </div>
     </div>
     <div class="col-5">
       <div class="card mt-3 shadow-sm p-3 mb-5 bg-body rounded">
-        <div class="card-body">
+        <div class="card-body"> 
           <%= render partial: 'options', collection: @options%>
         </div>
       </div>

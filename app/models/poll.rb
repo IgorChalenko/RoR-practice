@@ -4,7 +4,7 @@ class Poll < ApplicationRecord
   has_many :members, -> { distinct }, through: :memberships, source: :user, dependent: :destroy
   has_many :options, class_name: "PollOption", dependent: :destroy
 
-  accepts_nested_attributes_for :options, allow_destroy: true
+  accepts_nested_attributes_for :options, allow_destroy: true, reject_if: lambda {|attributes| attributes['vote_option'].blank?}
   
 
   validates :title, presence: true

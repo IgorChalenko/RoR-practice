@@ -1,10 +1,11 @@
 class VotesController < ApplicationController
 
-  def create
+  def update
     @poll = current_user.polls.find(params[:poll_id])
-    @options = @poll.options
-    @vote = PollMembership.new(user_id: current_user.id, poll_id: @poll.id, poll_option_id: params[:poll_option_id])
-    if @vote.save
+    @option = @poll.options.find(params[:id])
+    authorize! @poll, to: :vote?
+    
+    if @poll.memberships.update(poll_option_id: @option.id)
       redirect_to poll_path(@poll.id), success: 'Successfully voted'
     else
       render :show

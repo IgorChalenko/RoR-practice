@@ -8,11 +8,4 @@ class ApplicationPolicy < ActionPolicy::Base
     user.present?
   end
 
-  def owner?
-    user.id == record.user_id 
-  end
-
-  def invited?
-    record.memberships.where(user_id: user.id).exists?
-  end
 end

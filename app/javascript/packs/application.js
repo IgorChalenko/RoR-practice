@@ -4,30 +4,13 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
+// import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 
-window.addEventListener('DOMContentLoaded', () => {
-
-  const addButton = document.querySelector('#btn'),
-        options = document.querySelector('#options');
-  
-  let counter = 1;                    
-
-  addButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (counter <= 3) {
-      options.insertAdjacentHTML('beforeend', optionText);
-      counter++;
-    } else {
-      addButton.style.display = 'none';
-    }
-  });
-
-});
+require('./add_button_script/script');
 

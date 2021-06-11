@@ -15,12 +15,13 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
     authorize! @poll, to: :show?
     @options = @poll.options
+    @members = @poll.members.count
   end
 
   def new
     authorize! Poll, to: :create?
     @poll = Poll.new
-    5.times { @poll.options.build }
+    2.times { @poll.options.build }
   end
 
   def create
@@ -35,16 +36,16 @@ class PollsController < ApplicationController
   end
 
   def edit
-    @poll = current_user.own_polls.find(params[:id])
-
+    @poll = Poll.find(params[:id])
+    @options = @poll.options
     authorize! @poll, to: :update?
   end
 
   def update
     @poll = Poll.find(params[:id])
     authorize! @poll, to: :update?
-    @poll.update(poll_params)
-    if @poll.save
+    
+    if @poll.update(poll_params)
       redirect_to poll_path(@poll.id), success: I18n.t('flash.poll.update')
     else
       render :new
@@ -62,6 +63,6 @@ class PollsController < ApplicationController
   private
 
   def poll_params
-    params.require(:poll).permit(:title, :description, :start_date, :end_date, options_attributes: [:vote_option, :_destroy])
+    params.require(:poll).permit(:title, :description, :start_date, :end_date, options_attributes: [:id, :vote_option, :_destroy])
   end
 end

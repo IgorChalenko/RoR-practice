@@ -299,7 +299,7 @@
           null
         ]
       },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/polls.rb": {
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/poll_memberships.rb": {
         "lines": [
           null,
           null,
@@ -308,7 +308,51 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/poll_membership.rb": {
+        "lines": [
           1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/poll_option.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/poll_option.rb": {
+        "lines": [
+          1,
+          1,
+          null,
           1,
           null,
           null
@@ -328,19 +372,37 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/application_record.rb": {
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/polls.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          9,
+          9,
+          9,
+          9,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -350,16 +412,16 @@
           null,
           1,
           1,
-          0,
+          14,
           null,
           null,
           null,
           1,
           1,
+          15,
           1,
-          1,
-          1,
-          1,
+          15,
+          15,
           null,
           null
         ]
@@ -405,9 +467,14 @@
           1,
           1,
           null,
-          1,
+          null,
+          null,
+          null,
           null,
           1,
+          1,
+          1,
+          null,
           null,
           null,
           null,
@@ -433,69 +500,45 @@
           null
         ]
       },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/controllers/polls_controller.rb": {
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/policies/poll_policy.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          0,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          2,
           null,
           null,
           1,
-          0,
-          0,
+          2,
           null,
           null,
           1,
-          0,
-          0,
+          2,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
+          2,
           null,
           null,
           1,
-          0,
           0,
           null,
           null,
           1,
           0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
           null,
           1,
-          0,
-          0,
-          0,
           0,
           null,
           null,
           1,
-          null,
+          2,
           null,
           null,
           1,
+          2,
+          null,
           null,
           1,
           0,
@@ -503,39 +546,22 @@
           null
         ]
       },
-      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/controllers/application_controller.rb": {
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/policies/application_policy.rb": {
         "lines": [
           null,
           null,
-          1,
-          1,
           null,
           1,
           1,
           null,
           1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
+          4,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1623010829
+    "timestamp": 1623413847
   }
 }

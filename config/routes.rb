@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :polls do 
     resources :invites, only: [:new, :create]
-    resources :votes, only: [:create]
+    resources :votes, only: [:update]
   end
 
  

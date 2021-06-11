@@ -25,7 +25,7 @@ class PollPolicy < ApplicationPolicy
     owner?
   end
   def vote?
-    owner? && !voted? || invited? && !voted?
+    invited? && !voted?
   end
 
   def owner?
@@ -36,4 +36,7 @@ class PollPolicy < ApplicationPolicy
     record.memberships.where(user_id: user.id).exists?
   end
 
+  def voted?
+    record.memberships.where(user_id: user.id).and(record.memberships.where.not(poll_option_id: nil)).exists?
+  end
 end
