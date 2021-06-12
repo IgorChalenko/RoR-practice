@@ -24,7 +24,7 @@ class Poll < ApplicationRecord
   end
   
   def blank_option?
-    lambda {|attributes| attributes['vote_option'].blank?}
+    attributes['vote_option'].blank?
   end
 
 end
