@@ -16,7 +16,7 @@ class PollsController < ApplicationController
     authorize! @poll, to: :show?
     @options = @poll.options
     @members = @poll.members.count
-    ActionCable.server.broadcast(@poll, { body: "This Room is Best Room." })
+    ActionCable.server.broadcast(@poll, { body: 'success'})
   end
 
   def new

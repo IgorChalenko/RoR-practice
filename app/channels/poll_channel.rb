@@ -7,7 +7,7 @@ class PollChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-   
+    ActionCable.server.broadcast_to(@poll, data)
   end
 
 end 
