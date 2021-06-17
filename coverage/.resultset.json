@@ -1,0 +1,567 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/environment.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/application.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/boot.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/environments/test.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/application_controller_renderer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/backtrace_silencers.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/content_security_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/cookies_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/mime_types.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/permissions_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/sidekiq.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/initializers/wrap_parameters.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/poll_memberships.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/poll_membership.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/poll_option.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/poll_option.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/poll.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/polls.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          9,
+          9,
+          9,
+          9,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/factories/users.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          14,
+          null,
+          null,
+          null,
+          1,
+          1,
+          15,
+          1,
+          15,
+          15,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/config/routes.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/spec/support/factory_bot.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/policies/poll_policy.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Рабочий стол/home_practice/RoR-practice/app/policies/application_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1623413847
+  }
+}

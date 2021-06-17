@@ -1,0 +1,61 @@
+<div class="container-fluid" style="padding-top: 35px; padding-bottom: 50px;">
+  <div class="row">
+    <div class="col-7">
+      <h3><%= @poll.title %></h3>
+    </div>
+    <div class="col-5 d-flex justify-content-between ">
+      <% if allowed_to?(:invite?, @poll ) %>
+        <%= link_to "Invite user", new_poll_invite_path(@poll.id), class:"btn btn-success pl-1 pr-1 w-50"%>
+      <% end %>
+      <% if allowed_to?(:update?, @poll ) %>  
+        <%= link_to "Edit poll", edit_poll_path(@poll.id), class:"btn btn-warning pl-1 pr-1 w-50"%>
+      <% end %>  
+      <% if allowed_to?(:destroy?, @poll ) %>
+        <%= link_to "Delete poll", @poll, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger pl-1 pr-1 w-50"%>
+      <% end %>
+    </div>
+  </div>
+  <div class="row gx-5">
+    <div class="col-7">
+      <div class="card mt-3 shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="card-body">
+          <h5>Details</h5>
+          <p class="fs-6">Description</p>
+          <p><%= @poll.description %></p>
+          <div class="row justify-content-between">
+            <div class="col-3">
+              <p>Start date</p>
+              <p><%= @poll.start_date %></p>
+            </div>
+            <div class="col-3">
+              <p>End date</p>
+              <p><%= @poll.end_date %></p>
+            </div>
+          </div>
+          <p class="fs-6">Participians count <%= @members_count %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card mt-3 shadow-sm p-3 mb-5 bg-body rounded"> 
+          <% if allowed_to?(:vote?, @poll) %>
+            <div class="card-body">
+                <%= render partial: 'options', collection: @options %> 
+            </div>
+          <% else %>
+            <div class="card-body"> 
+              <p style="color: #0a9396;">You have alredy voted. Whait until vote ends and check result.</p>
+            </div>
+          <% end %>
+      </div>
+    </div>   
+  </div>  
+  <div class="row justify-content-center ">
+    <div class="col-10 overflow-auto align-self-center border-top border-2" style="height: 350px">
+    </div>
+    <div class="input-group w-75 p-2">
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div>
+  </div>
+</div>

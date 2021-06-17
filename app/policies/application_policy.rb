@@ -7,4 +7,5 @@ class ApplicationPolicy < ActionPolicy::Base
   def logged_in?
     user.present?
   end
+
 end

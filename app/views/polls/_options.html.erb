@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-6 ">
+    <%= button_to options.vote_option, poll_vote_path(@poll, option_id: options.id), method: :patch, class: 'nav-link border w-75'%>
+  </div>
+</div>

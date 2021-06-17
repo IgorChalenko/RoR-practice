@@ -1,0 +1,42 @@
+<%= form_for @poll, class: "border rounded p-4 mt-5" do |f| %>   
+    <% if f.object.errors.any? %>  
+      <div class="alert alert-danger">
+          <%= f.object.errors.full_messages.each do |msg| %>
+            <div><%= msg %></div>
+          <% end %>
+      </div>
+      <% end %>  
+    
+    <div class="mb-3">
+      <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+    </div> 
+    <div class="mb-3">
+      <%= f.text_area :description, placeholder: "Description", class: "form-control" %>
+    </div>
+    <div class="row"> 
+      <div class="col-6 mb-3 d-flex flex-column">
+        <%= f.label :start_date, class: "form-label"%>
+        <%= f.date_field :start_date, class: "form-control"%>
+      </div> 
+      <div class="col-6 mb-3 d-flex flex-column">
+        <%= f.label :end_date, class: "form-label"%>
+        <%= f.date_field :end_date, class: "form-control"%>  
+      </div>
+    </div>
+    <div class="row" id="options">
+        <%= f.fields_for :options do |option| %>
+          <div class="col-4"> 
+            <%= option.text_field :vote_option, placeholder: 'Option', class: "form-control" %>
+            <%= option.check_box :_destroy %>
+          </div>
+        <% end %>
+    </div> 
+    <div class="row d-flex justify-content-between">      
+      <div class="col-3">
+        <%= f.submit "Edit poll", class: "btn btn-primary" %>   
+      </div>
+      <div class="col-5">
+        <%= f.button "Add option", class: "btn btn-success", style: "width: 100%;" %>  
+      </div>
+    </div>
+  <% end %>

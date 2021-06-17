@@ -1,0 +1,10 @@
+
+<%= form_tag poll_invites_path, method: :post, class: "border rounded p-4 mt-5" do %> 
+<p>Type username or email</p>
+  <div class="mb-3">
+      <%= text_field_tag :query, params[:query], class: "form-control" %>
+  </div> 
+  <div class="col-3">
+      <%= submit_tag "Send invite", class: "btn btn-primary" %>     
+  </div>
+<% end %>

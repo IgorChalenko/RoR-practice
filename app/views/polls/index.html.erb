@@ -1,0 +1,20 @@
+<div class="container-fluid" style="padding-top: 45px;">
+  <div class="d-flex flex-row justify-content-between align-items-center">
+    <h1>Your poll</h1>
+    <%= link_to '+ New Poll', new_poll_path, class: "btn btn-primary"%>
+  </div>
+  <div class="container">
+    <div class="row justify-content-between pb-3">
+      <% if current_user.polls.empty?%>
+        <h3>You have no polls yet.</h3>
+      <% else %>  
+        <h3>Uppcoming polls</h3>
+          <%= render partial: "upcoming", collection: @upcoming %>
+        <h3>Active polls</h3>
+          <%= render partial: "active", collection: @active %>
+        <h3>Closed polls</h3>
+          <%= render partial: "ended", collection: @ended%>
+      <% end %>    
+    </div>
+  </div>  
+</div>
