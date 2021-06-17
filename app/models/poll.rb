@@ -16,6 +16,8 @@ class Poll < ApplicationRecord
   scope :active, -> { where('start_date <= ? and end_date >= ?', Date.today, Date.today) }
   scope :ended, -> { where('end_date < ?', Date.today) }
 
+  
+  
   private  
   def end_date_before_start_date
     return if start_date.blank? || end_date.blank?
@@ -23,8 +25,11 @@ class Poll < ApplicationRecord
     errors.add(:end_date, "can't be earlier than start date ") if end_date <= start_date
   end
   
-  def blank_option?
+  def blank_option?(attributes)
     attributes['vote_option'].blank?
+  end
+
+  def min_and_max_option
   end
 
 end

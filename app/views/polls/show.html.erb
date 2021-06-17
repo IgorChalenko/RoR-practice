@@ -37,10 +37,16 @@
       </div>
     </div>
     <div class="col-5">
-      <div class="card mt-3 shadow-sm p-3 mb-5 bg-body rounded">
-        <div class="card-body"> 
-          <%= render partial: 'options', collection: @options%>
-        </div>
+      <div class="card mt-3 shadow-sm p-3 mb-5 bg-body rounded"> 
+          <% if allowed_to?(:vote?, @poll) %>
+            <div class="card-body">
+                <%= render partial: 'options', collection: @options %> 
+            </div>
+          <% else %>
+            <div class="card-body"> 
+              <p style="color: #0a9396;">You have alredy voted. Whait until vote ends and check result.</p>
+            </div>
+          <% end %>
       </div>
     </div>   
   </div>  

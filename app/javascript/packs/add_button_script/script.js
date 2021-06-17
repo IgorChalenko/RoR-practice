@@ -21,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
       options.insertAdjacentElement('beforeend', col);
       
       counter++;
-    } else {
-      addButton.style.display = 'none';
-
+      if (counter == 5) {
+        addButton.style.display = 'none';
+      }
+      
     }
   });
 
