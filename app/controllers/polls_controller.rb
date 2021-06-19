@@ -16,7 +16,7 @@ class PollsController < ApplicationController
     authorize! @poll, to: :show?
     @options = @poll.options
     @members = @poll.members.count
-    ActionCable.server.broadcast(@poll, { body: 'success'})
+    # ActionCable.server.broadcast("poll_channel", { message: current_user.username })
   end
 
   def new
