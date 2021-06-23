@@ -7,11 +7,10 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import polChannel from '../channels/poll_channel'
 import pollChannel from "../channels/poll_channel"
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 
 require('./add_button_script/script');
@@ -29,4 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }    
   });
 })
-       
+
+
+
